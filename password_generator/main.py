@@ -1,7 +1,6 @@
 import string
 import secrets
 import random
-import os
 
 
 alpha = string.ascii_letters
