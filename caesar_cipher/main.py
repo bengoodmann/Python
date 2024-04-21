@@ -1,4 +1,11 @@
-from string import ascii_letters as alphabet
+import string
+
+alphabet = (
+    string.ascii_lowercase
+    + string.digits
+    + string.punctuation
+    + " "
+)
 
 
 def caesar(direction, text, shift):
@@ -7,10 +14,10 @@ def caesar(direction, text, shift):
         if letter in alphabet:
             index = alphabet.index(letter)
             if direction == "encode":
-                index = (index + shift) % 26
+                index = (index + shift) % len(alphabet)
                 _text += alphabet[index]
             elif direction == "decode":
-                index = (index - shift) % 26
+                index = (index - shift) % len(alphabet)
                 _text += alphabet[index]
 
     print(f"Your {direction}d text is {_text}")
